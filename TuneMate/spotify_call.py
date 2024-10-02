@@ -1,6 +1,5 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-import pprint
 #from nlp import genre
 
 cid = 'bad5081179454c7aac97e6f6eabbb794'
@@ -35,6 +34,7 @@ def create_playlist_with_tracks(track_ids):
     sp.user_playlist_add_tracks(user=user_id, playlist_id=playlist['id'], tracks=track_ids)
     print(f"Playlist '{playlist['name']}' created with {len(track_ids)} tracks.")
     print(f"링크: {playlist['external_urls']['spotify']}")
+    return playlist['external_urls']['spotify']
 
 
   
