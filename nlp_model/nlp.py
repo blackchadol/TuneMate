@@ -1,25 +1,18 @@
 import requests
 
 API_URL = "https://api-inference.huggingface.co/models/matthewburke/korean_sentiment"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": "Bearer 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"}
 
-def query(payload):
-	response = requests.post(API_URL, headers=headers, json=payload)
-	return response.json()
+def query_hugging_face(input_text):
+    response = requests.post(API_URL, headers=headers, json={"inputs": input_text})
+    output = response.json()
 
-# 입력 문장에 대한 감정 분석
-input_text = "I like you. I love you."
-output = query({"inputs": input_text})
-
-# 레이블과 스코어 확인
-label = output[0][0]['label']  # LABEL_1 또는 LABEL_0
-score = output[0][0]['score']   # 스코어 값
-
-# 장르 결정
-if label == "LABEL_1":
-    genre = "happy"  # 긍정적
-else:
-    genre = "sad"  # 부정적
-	
-print(label)
-print(score)
+    # 긍정적인 감정 분석 결과만 추출 (LABEL_1의 score 값)
+    for result in output[0]:
+        if result['label'] == "LABEL_1":  # 긍정적일 때
+            return result['score']  # 긍정의 score만 반환
+        
+        else:
+            print("Error:", response.status_code, response.text)
+            return 0  # 실패 시 0 반환
+   
