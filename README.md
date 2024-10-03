@@ -24,12 +24,15 @@
 
 1. GitHub에서 프로젝트를 클론합니다.
 
-```bash
-git clone https://github.com/yourusername/tune-mate.git
-cd tune-mate
+```
+git clone https://github.com/blackchadol/TuneMate.git
+cd TuneMate
+```
 
 
-1. Hugging space에서 문장을 입력받아 긍정적인지 부정적인지 검사하는 한국어 NLP 모델 사용
-   - 모델출처 : https://huggingface.co/matthewburke/korean_sentiment
-  
-nlp.py input에 사용자의 입력을 넣으면 Hungging space api를 이용해 nlp 모델을 작동시켜 결과추출
+##  필요한 설정
+```
+pip install -r requirements.txt
+```
+터미널에 위 명령어를 입력해 프로그램 실행에 필요한 패키지 설치필수
+
