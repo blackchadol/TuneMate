@@ -5,8 +5,8 @@
 
 ## 백엔드 프로젝트 구조
 
-- `flask_server.py`: Flask 서버 파일로, 안드로이드로부터 텍스트 입력을 받아 Hugging Face 감정 분석을 수행한 후, Spotify에서 플레이리스트를 생성합니다.
-- `spotify_call.py`: Spotify API를 이용해 트랙을 검색하고 플레이리스트를 생성 후 URL 반환
+- `flask_server.py`: Flask 서버 파일로, 안드로이드로부터 텍스트 입력을 받아 Hugging Face 감정 분석을 수행한 후, Spotify에서 플레이리스트를 생성후 서버로 반환
+- `spotify_call.py`: 입력받은 텍스트의 긍정도를 바탕으로 Spotify API를 이용해 트랙을 검색하고 플레이리스트를 생성 후 URL 반환
 - `nlp.py`: Hugging Face API를 호출해 텍스트 감정 분석을 수행하고, 긍정적인 감정의 점수를 반환
 - `requirements.txt`: 프로젝트 실행에 필요한 모든 Python 라이브러리 목록
 
