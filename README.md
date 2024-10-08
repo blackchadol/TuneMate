@@ -9,6 +9,7 @@
 - `spotify_call.py`: 입력받은 텍스트의 긍정도를 바탕으로 Spotify API를 이용해 트랙을 검색하고 플레이리스트를 생성 후 URL 반환
 - `nlp.py`: Hugging Face API를 호출해 텍스트 감정 분석을 수행하고, 긍정적인 감정의 점수를 반환
 - `requirements.txt`: 프로젝트 실행에 필요한 모든 Python 라이브러리 목록
+- `AWS E2C` : AWS EC2 인스턴스를 이용해 FLASK서버 호스팅, http://3.26.61.213:5000/receive_text에 POST 방식으로 JSON 형식의 텍스트 데이터를 전송하여 서버 사용 가능
 
 ## 필요한 설정
 
