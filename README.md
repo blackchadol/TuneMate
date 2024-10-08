@@ -6,8 +6,8 @@
 ## 백엔드 프로젝트 구조
 
 - `flask_server.py`: Flask 서버 파일로, 안드로이드로부터 텍스트 입력을 받아 Hugging Face 감정 분석을 수행한 후, Spotify에서 플레이리스트를 생성후 서버로 반환
-- `spotify_call.py`: 입력받은 텍스트의 긍정도를 바탕으로 Spotify API를 이용해 트랙을 검색하고 플레이리스트를 생성 후 URL 반환
-- `nlp.py`: Hugging Face API를 호출해 텍스트 감정 분석을 수행하고, 긍정적인 감정의 점수를 반환
+- `spotify_call.py`: 입력받은 텍스트의 긍정도를 바탕으로 Spotify API의 valence를 이용해 트랙을 검색한다. valence는 각 트랙의 감정적 밝기를 나타내는 파라미터 이며 값의 범위는 0.0 ~ 1.0 사이이다. 1.0에 가까울수록 더 긍정적이고 밝은 감정을 표현하는 음악이다. 이를 바탕으로 플레이리스트를 생성 후 URL을 반환
+- `nlp.py`: Hugging Face API를 호출해 텍스트 감정 분석을 수행하고, 긍정적인 감정의 점수를 반환. 0 ~ 1사이의 값을 반환하며 1에 가까울수록 긍정적이라는 뜻
 - `requirements.txt`: 프로젝트 실행에 필요한 모든 Python 라이브러리 목록
 - `AWS E2C` : AWS EC2 인스턴스를 이용해 FLASK서버 호스팅, http://3.26.61.213:5000/receive_text에 POST 방식으로 JSON 형식의 텍스트 데이터를 전송하여 서버 사용 가능
 
